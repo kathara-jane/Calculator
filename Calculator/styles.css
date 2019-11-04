@@ -22,6 +22,7 @@ div {
   font-family: "Courier New", Courier, monospace;
   text-align: right;
   padding: 20px 5px;
+  height: 75px;
 }
 
 .calc-button-row {
@@ -45,6 +46,10 @@ body {
     border-radius: 0;
     font-size: 40px;
     cursor: pointer;
+}
+
+.calc-button:hover{
+    background-color: whitesmoke;
 }
 
 button {
@@ -75,6 +80,10 @@ button {
 .calc-button:last-child {
     background-color: #df974c;
     color: white;
+}
+
+.calc-button:last-child:hover {
+    background-color: #e0b07b
 }
 
 .triple {
