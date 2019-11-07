@@ -52,15 +52,20 @@ const onNumberButtonClick = e => {
 }
 
 const doMath = (nums, pendingOperation) => {
-    console.log(pendingOperation)
     const result = operations[pendingOperation](parseInt(nums[0]),parseInt(nums[1]))
     screen.innerText = result
 }
 
+const clearMe = () =>{
+    nums.splice(0);
+    pendingOperation=""
+    screen.innerText = 0
 
-function rerender() {
+}
+
+const rerender = () => {
     screen.innerText = start;
-  }
+}
 
 const init = () => {
     Array.from(document.getElementsByClassName('number')).forEach(btn => btn.addEventListener('click', onNumberButtonClick))
@@ -69,6 +74,7 @@ const init = () => {
     divideButton.addEventListener("click", () => pendingOperation= "divide")
     multiplyButton.addEventListener("click", () => pendingOperation = "multiply")
     equalsButton.addEventListener("click", () => doMath(nums, pendingOperation))
+    clearButton.addEventListener("click", () => clearMe(nums, pendingOperation))
 }
 init();
 
@@ -86,7 +92,7 @@ init();
 
 
 /*
-
+FUTURE FEATURES:
 CLEAR BUTTON
 FIT ON SCREEN
 MULTIPLE NUMBERS, MULTIDIGIT NUMBERS
